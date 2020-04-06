@@ -1,0 +1,13 @@
+h1.color-rojo{
+    color:red;
+}
+
+h2.color-azul{
+    color:blue;
+    border-color: darkcyan;
+    text-shadow: crimson;
+    right: auto;
+    width: max-content;
+    font-size: 124px;
+    min-height: 12%;
+}

@@ -30,7 +30,7 @@ public class IndexController {
 		Usuario usuario = new Usuario();
 		usuario.setApellido("Sanchez");
 		usuario.setNombre("Camilo");
-		usuario.setEmail("estefue@queleimposrta.com");
+		usuario.setEmail("estefue@queleimposrtaaaa.com");
 		
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("titulo","SpringFramework".concat(usuario.getNombre()));
@@ -42,9 +42,10 @@ public class IndexController {
 	public String listar (Model model){
 		
 		List<Usuario> usuarios = new ArrayList<>();
-		usuarios.add(new Usuario("COMO","FUE","correoFUE"));
+		usuarios.add(new Usuario("pruebaaa","FUE","primero"));
 		usuarios.add(new Usuario("QUE","SE","DICE COREO"));
 		usuarios.add(new Usuario("tercero nombre","tercero apellido","tercero mail"));
+		usuarios.add(new Usuario("bueno","mi","papa"));
 		
 		
 		model.addAttribute("titulo");
@@ -59,7 +60,8 @@ public class IndexController {
 		List<Usuario> usuarios = Arrays.asList(
 				new Usuario("COMO","FUE","correoFUE"),
 				new Usuario("QUE","SE","DICE COREO"),
-				new Usuario("tercero nombre","tercero apellido","tercero mail"));				
+				new Usuario("tercero nombre","tercero apellido","tercero mail"),
+				new Usuario("BuenoMiPapa","cuartetoconuncuarteto","sinpalabras"));
 		
 		return usuarios;
 	}
