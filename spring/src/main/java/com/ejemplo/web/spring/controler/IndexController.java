@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,11 +16,19 @@ import com.ejemplo.web.spring.models.Usuario;
 @Controller
 @RequestMapping("/app")
 public class IndexController {
+
+	@Value ("${texto.propiedad.index}")
+	private String textoIndex;
+	@Value ("${texto.propiedad.perfil}")
+	private String textoPerfil;
+	@Value ("${texto.propiedad.listar}")
+	private String textoListar;
 	
+
 	@RequestMapping(value = {"/index","/home"},method=RequestMethod.GET)
 	public String index(Model model) {
 		
-		model.addAttribute("titulo","SpringFramework");
+		model.addAttribute("titulo","xtoIndexSpringFramework");
 		
 		return "index";
 	}
@@ -47,8 +56,8 @@ public class IndexController {
 		usuarios.add(new Usuario("tercero nombre","tercero apellido","tercero mail"));
 		usuarios.add(new Usuario("bueno","mi","papa"));
 		
+		model.addAttribute("titulo", textoListar);
 		
-		model.addAttribute("titulo");
 		//model.addAttribute("usuarios",usuarios);
 		
 		return "listar";
@@ -61,7 +70,8 @@ public class IndexController {
 				new Usuario("COMO","FUE","correoFUE"),
 				new Usuario("QUE","SE","DICE COREO"),
 				new Usuario("tercero nombre","tercero apellido","tercero mail"),
-				new Usuario("BuenoMiPapa","cuartetoconuncuarteto","sinpalabras"));
+				new Usuario("BuenoMiPapa","cuartetoconuncuarteto","sinpalabras")
+				);
 		
 		return usuarios;
 	}
